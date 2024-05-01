@@ -1,6 +1,6 @@
 <script>
-    export let name;
+    export let text;
   </script>
   <div>
-    {name}
+    {text}
   </div>
