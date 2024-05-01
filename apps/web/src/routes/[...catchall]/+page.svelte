@@ -1,7 +1,21 @@
 <!-- src/routes/[…catchall]/+page.svelte -->
 <script lang="ts">
 	import { isPreviewing, Content } from "@builder.io/sdk-svelte";
-  
+	import { HelloWorld } from '@repo/ui';
+
+	const CUSTOM_COMPONENTS = [
+	{
+		component: HelloWorld,
+		name: 'Hello World',
+		inputs: [
+		{
+			name: 'text',
+			type: 'string',
+			defaultValue: 'World',
+		},
+		],
+	},
+	]
 	// this data comes from the function in `+page.server.js`, which runs on the server only
 	export let data;
   
@@ -21,7 +35,8 @@
 	  <Content
 		model="page"
 		content={data.content}
-		apiKey={BUILDER_PUBLIC_API_KEY} 
+		apiKey={BUILDER_PUBLIC_API_KEY}
+		customComponents={CUSTOM_COMPONENTS}
 	  />
 	{:else}
 	  Content Not Found
