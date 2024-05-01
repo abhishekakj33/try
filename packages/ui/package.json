@@ -16,5 +16,8 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "svelte": "^4.2.12"
+  },
+  "dependencies": {
+    "@builder.io/sdk-svelte": "^1.0.25"
   }
 }
